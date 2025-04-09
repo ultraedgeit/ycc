@@ -8650,7 +8650,7 @@ html .ui-button.ui-state-disabled:active {
 ----------------------------------------------------------------*/
 .td_footer.td_style_1 {
   color: #fff;
-  background-color: #150005;
+  background-color: #FFFF00;
 }
 .td_footer.td_style_1 .td_newsletter.td_style_1 .td_newsletter_input {
   padding-right: 135px;
@@ -8659,7 +8659,7 @@ html .ui-button.ui-state-disabled:active {
   background-color: var(--heading-color);
 }
 .td_footer.td_style_1.td_color_2 {
-  background-color: #fff;
+  background-color: black;
   color: var(--heading-color);
 }
 .td_footer.td_style_1.td_color_2 .td_footer_widget_title {
@@ -8678,7 +8678,7 @@ html .ui-button.ui-state-disabled:active {
   color: rgba(255, 255, 255, 0.75);
 }
 .td_footer.td_style_1.td_color_4 .td_footer_bottom {
-  background-color: #fff;
+  background-color: black;
   color: var(--heading-color);
 }
 .td_footer.td_style_1.td_type_1 .td_footer_bottom_in {
@@ -8713,7 +8713,7 @@ html .ui-button.ui-state-disabled:active {
   border-radius: 10px 0 0 10px;
 }
 .td_footer.td_style_1.td_type_2 .td_footer_social_btns a:hover {
-  background-color: #fff;
+  background-color: black;
   color: var(--accent-color);
 }
 .td_footer.td_style_1.td_type_2 .td_footer_shape_1 {
@@ -8801,7 +8801,7 @@ html .ui-button.ui-state-disabled:active {
   position: absolute;
   height: 200px;
   width: 1px;
-  border-left: 1px dashed #fff;
+  border-left: 1px dashed black;
   opacity: 0.4;
   left: 0;
   top: 70px;
@@ -14694,3 +14694,22 @@ button.td_icon_btn:hover {
     font-size: 250px;
   }
 }/*# sourceMappingURL=style.css.map */
+
+
+
+/* Make all footer text black */
+footer.td_footer {
+  color: #000000;
+}
+
+/* Make links in the footer black */
+footer.td_footer a {
+  color: #000000;
+}
+
+/* Optional: if there are headings and icons, make them black too */
+footer.td_footer h2,
+footer.td_footer i {
+  color: #000000;
+}
+
