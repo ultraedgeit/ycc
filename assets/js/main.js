@@ -78,7 +78,7 @@
   function mainNav() {
     $('.td_nav').append('<span class="td_menu_toggle"><span></span></span>');
     $('.menu-item-has-children').append(
-      '<span class="td_munu_dropdown_toggle"><span></span></span>',
+      // '<span class="td_munu_dropdown_toggle"><span></span></span>',
     );
     $('.td_menu_toggle').on('click', function () {
       $(this)

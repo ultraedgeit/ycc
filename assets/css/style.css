@@ -96,7 +96,7 @@
   --white-color: #fff;
   --heading-color: #00001b;
   --body-color: #555;
-  --accent-color: #890c25;
+  --accent-color: #0c2a82;
   --gray-color: #f4f3ef;
   --border-color: #d9d9d9;
   --heading-font: "Euclid Circular A", sans-serif;
@@ -7833,8 +7833,9 @@ html .ui-button.ui-state-disabled:active {
     color: var(--heading-color);
   }
   .td_site_header.td_style_1.td_type_4 .td_btn.td_style_1 .td_btn_in.td_heading_bg::before {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: transparent;
   }
+  
   .td_site_header.td_style_1.td_type_4 .td_circle_btn {
     border-color: #fff;
   }
@@ -7858,7 +7859,7 @@ html .ui-button.ui-state-disabled:active {
   color: var(--heading-color);
 }
 .td_site_header.td_style_1.td_type_4.td_gescout_sticky .td_btn.td_style_1 .td_btn_in.td_heading_bg::before {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(230, 10, 10, 0.2);
 }
 .td_site_header.td_style_1.td_type_4.td_gescout_sticky .td_circle_btn {
   border-color: #fff;
@@ -9718,7 +9719,6 @@ html .ui-button.ui-state-disabled:active {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: #00001b;
   -webkit-filter: blur(250px);
           filter: blur(250px);
   left: 13%;
