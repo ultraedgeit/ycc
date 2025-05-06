@@ -8207,7 +8207,7 @@ html .ui-button.ui-state-disabled:active {
     position: relative;
   }
   .td_nav .td_nav_list > li.menu-item-has-children > a::after {
-    content: "";
+    content: none;
     display: inline-block;
     height: 6px;
     width: 6px;
@@ -8221,6 +8221,8 @@ html .ui-button.ui-state-disabled:active {
     top: -1px;
     border-radius: 0px 0px 2px 0px;
   }
+  
+  
   .td_nav .td_nav_list li:not(.td_mega_menu) {
     position: relative;
   }
@@ -14712,4 +14714,7 @@ footer.td_footer h2,
 footer.td_footer i {
   color: #000000;
 }
+
+
+
 
