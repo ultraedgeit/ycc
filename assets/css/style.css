@@ -3682,18 +3682,18 @@ label {
 
 .td_list.td_style_1 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-Shree yash coaching classes-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
 @media (max-width: 1400px) {
   .td_list.td_style_1 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-Shree yash coaching classes-columns: repeat(2, 1fr);
     grid-gap: 10px;
   }
 }
 @media (max-width: 410px) {
   .td_list.td_style_1 {
-    grid-template-columns: repeat(1, 1fr);
+    grid-Shree yash coaching classes-columns: repeat(1, 1fr);
   }
 }
 .td_list.td_style_1 li {
@@ -3857,12 +3857,12 @@ label {
 .td_list.td_style_4 {
   display: grid;
   grid-gap: 30px 50px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-Shree yash coaching classes-columns: repeat(2, 1fr);
 }
 @media (max-width: 575px) {
   .td_list.td_style_4 {
     grid-gap: 15px;
-    grid-template-columns: repeat(1, 1fr);
+    grid-Shree yash coaching classes-columns: repeat(1, 1fr);
   }
 }
 .td_list.td_style_4 li {

@@ -3,7 +3,7 @@
 
   /*
   |--------------------------------------------------------------------------
-  | Template Name: Template
+  | Shree yash coaching classes Name: Shree yash coaching classes
   | Author: ThemeDox
   | Version: 1.0.0
   |--------------------------------------------------------------------------
