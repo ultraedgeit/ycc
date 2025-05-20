@@ -411,34 +411,75 @@
     <!-- End Feature Section -->
     
     <!-- Start Video Section -->
-    <section>
-      <div class="td_video_block td_style_1 td_accent_bg td_bg_filed td_center text-center" data-src="assets/img/home_1/video_bg.jpg">
-        <div class="container">
-          <a href="https://www.youtube.com/embed/rRid6GCJtgc" class="td_player_btn_wrap_2 td_video_open wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <span class="td_player_btn td_center">
-              <span></span>
-            </span>
-          </a>
-          <div class="td_height_70 td_height_lg_50"></div>
-          <h2 class="td_fs_48 td_white_color mb-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">Take a Video Tour <br>of our Classes</h2>
-        </div>
+  <section>
+  <div class="td_video_block td_style_1 td_accent_bg td_bg_filed td_center text-center" style="background-image: url('assets/img/yt.jpeg'); background-size: cover; background-position: center; padding: 100px 20px;">
+    <div class="container">
+      <!-- Custom play button -->
+      <a href="https://www.youtube.com/watch?v=OCYIbERKTns" target="_blank" class="custom-play-button">
+          <span></span>
+        </span>
+      </a>
+      <div class="td_height_70 td_height_lg_50"></div>
+      <h2 class="td_fs_48 td_white_color mb-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+        Take a Video Tour <br>of our Classes
+      </h2>
+    </div>
+  </div>
+
+  <div class="container wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+    <div class="td_contact_box td_style_1 td_accent_bg td_radius_10">
+      <div class="td_contact_box_left">
+        <p class="td_fs_18 td_light td_white_color td_mb_4">Get In Touch:</p>
+        <h3 class="td_fs_36 mb-0 td_white_color">
+          <a href="mailto:shreeyashcoachingclasses0@gmail.com">shreeyashcoaching<br>classes0@gmail.com</a>
+        </h3>
       </div>
-      <div class="container wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
-        <div class="td_contact_box td_style_1 td_accent_bg td_radius_10">
-          <div class="td_contact_box_left">
-            <p class="td_fs_18 td_light td_white_color td_mb_4">Get In Touch:</p>
-            <h3 class="td_fs_36 mb-0 td_white_color"><a href="mailto:shreeyashcoachingclasses0@gmail.com">shreeyashcoaching<br>classes0@gmail.com</a></h3>
-          </div>
-          <div class="td_contact_box_or td_fs_24 td_medium td_white_bg td_white_bg td_center rounded-circle td_accent_color">
-            or
-          </div>
-          <div class="td_contact_box_right">
-            <p class="td_fs_18 td_light td_white_color td_mb_4">Get In Touch:</p>
-            <h3 class="td_fs_36 mb-0 td_white_color"><a href="tel:+019987698870">+91 99602 44994</a></h3>
-          </div>
-        </div>
+      <div class="td_contact_box_or td_fs_24 td_medium td_white_bg td_center rounded-circle td_accent_color">
+        or
       </div>
-    </section>
+      <div class="td_contact_box_right">
+        <p class="td_fs_18 td_light td_white_color td_mb_4">Get In Touch:</p>
+        <h3 class="td_fs_36 mb-0 td_white_color">
+          <a href="tel:+919960244994">+91 99602 44994</a>
+        </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Play Button Styling -->
+<style>
+  .custom-play-button {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    margin: 0 auto;
+    transition: background 0.3s ease;
+  }
+
+  .custom-play-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid #007bff;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+  }
+
+  .custom-play-button:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+</style>
+
     <!-- End Video Section -->
     
     <!-- Start Testimonial Section -->
