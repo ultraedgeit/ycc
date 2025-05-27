@@ -31,6 +31,224 @@
     </div>
     <!-- End Preloader -->
     <!-- Start Header Section -->
+     <!-- Contact Us Popup -->
+<div id="contact-popup" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Segoe UI', sans-serif;
+">
+    <div style="
+        background: #fff;
+        width: 340px;
+        padding: 20px 20px;
+        border-radius: 14px;
+        position: relative;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        text-align: center;
+    ">
+        <!-- Close button -->
+        <button onclick="closePopup()" style="
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            background: #f43f5e;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        ">×</button>
+
+        <!-- Logo -->
+        <img src="assets/img/logow.png" alt="Logo" style="
+            width: 70px;
+            margin-bottom: 10px;
+        ">
+
+        <!-- Title -->
+        <h2 style="
+            color: #dc2626;
+            margin-bottom: 20px;
+            font-weight: bold;
+        ">Contact Us</h2>
+
+        <!-- Form -->
+        <form id="contactForm" style="text-align: left;">
+            <label for="name" style="font-weight: 600; display: block; margin-bottom: 6px;">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name" style="
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                margin-bottom: 12px;
+            ">
+
+            <label for="email" style="font-weight: 600; display: block; margin-bottom: 6px;">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email" style="
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                margin-bottom: 12px;
+            ">
+
+            <label for="phone" style="font-weight: 600; display: block; margin-bottom: 6px;">Phone No:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" style="
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                margin-bottom: 12px;
+            ">
+
+            <label for="message" style="font-weight: 600; display: block; margin-bottom: 6px;">Inquiry Message:</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Type your message here..." style="
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                margin-bottom: 15px;
+                resize: none;
+            "></textarea>
+
+            <button type="submit" style="
+                width: 100%;
+                background: linear-gradient(135deg, #f43f5e, #f87171);
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 8px;
+                font-size: 15px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s;
+            ">Submit</button>
+
+            <!-- Success Message -->
+            <div id="successMessage" style="
+                margin-top: 15px;
+                display: none;
+                color: green;
+                font-size: 14px;
+                text-align: center;
+            ">
+                ✅ Message sent successfully!
+            </div>
+
+            <!-- Loading Message -->
+            <div id="loadingMessage" style="
+                margin-top: 15px;
+                display: none;
+                color: #f43f5e;
+                font-size: 14px;
+                text-align: center;
+            ">
+                📤 Sending message...
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" style="
+                margin-top: 15px;
+                display: none;
+                color: red;
+                font-size: 14px;
+                text-align: center;
+            ">
+                ❌ Failed to send message. Please try again.
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Your Google Apps Script Web App URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2n-XL3WhV5oig81WrDhH7MjjAPqQ1wLnLdrmSj3VIf2thJ5Ze0YO6N7XTXo1XNiCfzg/exec';
+
+    function closePopup() {
+        document.getElementById("contact-popup").style.display = "none";
+    }
+
+    function showMessage(messageId) {
+        // Hide all messages first
+        document.getElementById("successMessage").style.display = "none";
+        document.getElementById("loadingMessage").style.display = "none";
+        document.getElementById("errorMessage").style.display = "none";
+        
+        // Show the specific message
+        document.getElementById(messageId).style.display = "block";
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Validation
+        if (!name || !email || !phone || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        if (!/^\d{10}$/.test(phone)) {
+            alert("Please enter a valid 10-digit phone number.");
+            return;
+        }
+
+        // Show loading message
+        showMessage("loadingMessage");
+
+        // Prepare form data
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('message', message);
+        formData.append('timestamp', new Date().toISOString());
+
+        try {
+            // Send data to Google Sheets via Google Apps Script
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                showMessage("successMessage");
+                document.getElementById("contactForm").reset();
+                
+                // Auto-close popup after 2 seconds
+                setTimeout(() => {
+                    showMessage(""); // Hide all messages
+                    closePopup();
+                }, 2000);
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showMessage("errorMessage");
+            
+            // Hide error message after 3 seconds
+            setTimeout(() => {
+                showMessage("");
+            }, 3000);
+        }
+    });
+</script>
+
+    
     <header class="td_site_header td_style_1 td_type_3 td_sticky_header td_medium td_heading_color">
       <div class="td_main_header">
         <div class="container-fluid">
